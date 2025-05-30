@@ -3,7 +3,8 @@
 // import express from 'express'  module
 
 import express from "express";
-
+import dotenv from 'dotenv'
+dotenv.config()
 const app = express();
 app.use(express.json())
 
@@ -19,6 +20,9 @@ app.get("/products", (req, res) => {
     ],
   });
 });
-app.listen("3000", () => {
-  console.log("server is running successfully");
+const port = process.env.PORT 
+console.log(port);
+
+app.listen(port, () => {
+  console.log("server is running successfully ",port);
 });
