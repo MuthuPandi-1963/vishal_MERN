@@ -6,7 +6,7 @@ const GetEmployee = async(req,res)=>{
         return res.json({
             data : Employees,
             success : true,
-            message : "Employee added successfully"
+            message : "Employee fetched successfully"
         })
     } catch (error) {
         res.json({
