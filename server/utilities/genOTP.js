@@ -1,0 +1,1 @@
+export const genOTP = ()=>Math.floor(100000+Math.random()*89999).toString()

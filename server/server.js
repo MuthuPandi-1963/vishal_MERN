@@ -5,6 +5,9 @@ import express from 'express'
 import cors from 'cors'
 import DbConfig from './db/DbConfig.js';
 import EmployeeRouter from './routes/Employee.routes.js';
+import authRouter from './routes/auth.routes.js';
+
+
 dotenv.config();
 const app = express();
 app.use(express.json())
@@ -17,7 +20,11 @@ app.get("/",(req,res)=>{
         message : "welcome to MERN stack new"
     })
 })
+
 app.use("/employee",EmployeeRouter)
+app.use("/auth",authRouter)
+
+
 const port  = process.env.PORT
 app.listen(port,()=>{
     DbConfig()
